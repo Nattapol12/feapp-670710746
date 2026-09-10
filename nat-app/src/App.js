@@ -54,6 +54,7 @@ import Movies from './pages/Movies';
 import About from './pages/About';
 import MovieDetail from './pages/MovieDetail';
 
+
 function App() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
