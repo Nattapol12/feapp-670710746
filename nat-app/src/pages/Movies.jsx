@@ -12,19 +12,28 @@
 // }
 
 // export default Movies;
-
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { movies } from '../data';
+import SearchBox from '../components/SearchBox';
 
 function Movies() {
+  const [query, setQuery] = useState('');
+
+  const shown = movies.filter((m) =>
+    m.title.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <div className="mx-auto max-w-5xl p-8">
       <h1 className="mb-6 text-2xl font-bold text-slate-800">
         หนังทั้งหมด
       </h1>
 
+      <SearchBox query={query} setQuery={setQuery} />
+
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {movies.map((m) => (
+        {shown.map((m) => (
           <Link
             key={m.id}
             to={`/movies/${m.id}`}
@@ -45,4 +54,3 @@ function Movies() {
 }
 
 export default Movies;
-
