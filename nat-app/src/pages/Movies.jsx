@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { movies } from '../data';
-import SearchBox from '../Components/SearchBox'; 
+import SearchBox from '../Components/SearchBox';
+import GenreBox from '../components/GenreBox';
 
+const GENRES = [...new Set(movies.map(m => m.genre))];
 function Movies() {
    const [query, setQuery] = useState('');
-   
+   const [genre, setGemre] = useState('all');
    const q =query.trim().toLowerCase();
-   const shown = movies.filter(m => m.title.toLowerCase().split(' ').some(word => word.startsWith(q)));
+   const shown = movies.filter(m => m.title.toLowerCase().split(' ').some(word => word.startsWith(q)) && (genre === 'all' || m.genre === genre));
 
   return (
     <div className="mx-auto max-w-5xl p-8">
       <h1 className="mb-6 text-2xl font-bold text-slate-800">หนังทั้งหมด</h1>
       <SearchBox query={query} setQuery={setQuery} />
-
+      <GenreBox genre ={genre} onGenreChange={setGemre} genres={GENRES} />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {shown.map(m => (
           <Link key={m.id} to={`/movies/${m.id}`}
