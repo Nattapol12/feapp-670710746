@@ -1,4 +1,4 @@
-function GenreBox({ganre,onGenreChange,genres})
+function GenreBox({genre,onGenreChange,genres})
 {
     return(
     <select value={genre} onChange={(e) => onGenreChange(e.target.value)}

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { movies } from "../data";
-import MovieCard from "../Components/MovieCard";
-import MovieGallery from "../Components/MovieGallery";
+import MovieCard from "../components/MovieCard";
+import MovieGallery from "../components/MovieGallery";
 
 function Home() {
   return (

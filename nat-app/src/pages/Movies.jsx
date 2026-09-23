@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { movies } from '../data';
-import SearchBox from '../Components/SearchBox';
-import GenreBox from '../Components/GenreBox';
+import SearchBox from '../components/SearchBox';
+import GenreBox from '../components/GenreBox';
 
 const GENRES = [...new Set(movies.map(m => m.genre))];  // ดึง genre ที่ไม่ซ้ำกัน
 

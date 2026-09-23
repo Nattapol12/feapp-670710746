@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { movies } from '../data';
-import ReviewForm from '../Components/ReviewForm';
+import ReviewForm from '../components/ReviewForm';
 
 function MovieDetail() {
   const { id } = useParams();                       // อ่านค่าจาก URL (ได้เป็น string!)
