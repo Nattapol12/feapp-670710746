@@ -1,10 +1,10 @@
-//import { useState } from "react";
-import { movies } from "../data";
+import { useState } from "react";
+//import { movies } from "../data";
 
 function SearchBox({query, setQuery}) {
   //const [query, setQuery] = useState('');
 
-    const shown = movies.filter(m => m.title.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
+    //const shown = movies.filter(m => m.title.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
   return (
     <div className="space-y-2 p-4">
       <input
